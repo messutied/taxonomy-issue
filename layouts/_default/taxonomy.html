@@ -1,0 +1,19 @@
+<h1>Global taxonomy</h1>
+
+<ul class="nav nav-pills justify-content-center" style="margin-bottom:3rem">
+  <li class="nav-item">
+    <a class="nav-link text-dark" href="/integrations/">Featured</a>
+  </li>
+
+  {{range $taxonomy := (index .Site.Taxonomies "integrations/tags").ByCount}}
+    {{ $name := .Term }}
+    {{ $fullname := printf "/integrations/tags/%s/" $name }}
+    {{ with $.Site.GetPage (printf "/integrations/tags/%s/" $name) }}
+      <li class="nav-item">
+        <a href="{{ .RelPermalink }}">
+          {{ $name }}
+        </a>
+      </li>
+    {{end}}
+  {{end}}
+</ul>

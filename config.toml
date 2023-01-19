@@ -1,0 +1,10 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+disableKinds = ["RSS"]
+
+[taxonomies]
+  integration_tags = "integrations/tags"
+
+[outputs]
+section = ['HTML']
